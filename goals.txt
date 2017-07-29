@@ -1,0 +1,118 @@
+initial game goal:
+move through overworld, interact with walls and objects to change them (colour, position, etc.)
+interact with npcs and objects (talking/examining, exchanging items)
+character following (npc attempts to stay a certain distance away at all times)
+camera	- world larger than screen, camera centers on player (camera can't go further than edge)
+	- world smaller than screen, camera centers in center of room
+
+events:
+basic:
+	player
+	-square, no direction
+	-user selected colour
+
+	overworld
+	-2 movement types (passable, impassable)
+	-change colour of wall in contact with (once, permanent)
+	-interact with wall in contact with, wall position changes (once, permanent)
+
+	npcs/objects
+	-talk with npcs
+	-read signs
+
+level 1
+	player
+	-sprite with a direction
+	-user selects from multiple sprites?
+	-quick key press = face direction
+	-longer key press = move direction
+	-can only interact with what front is in contact with
+
+	overworld
+	-change wall colour, position
+ floor, npc/object sprites
+	-change wall
+
+
+
+
+
+
+
+Camera goals
+	End goal
+	-hyper light drifter camera
+	-camera centers at player most of the time
+	-if camera hits edge of map, edge of camera=edge of map
+	-two ways to transition between maps
+		--overworld transition (between pokemon maps)
+		--warp (teleport from one section to another)
+	-secret areas that
+
+	-if path blocked, treat as edge of map, do not see beyond block
+	-if path unblocked, center camera on player
+
+	BASIC
+	-player-centered camera
+	-camera centers map if all map edges are within screen
+	
+	TIER 1
+	-if player-centered camera hits map edge, camera does not go beyond
+	-map edges treated like doors kinda
+	-(og zelda-style map transition)
+	
+	TIER 2
+	-camera stays focused on player through map transitions
+	-(pokemon style map transition)
+
+	TIER 3
+	-inaccesable areas count as map edge
+	-if area becomes accessable, change flag to allow further camera movement
+	-adjustable camera size
+
+	OTHER
+	-certain objects can block 'line of sight'
+	-blur/darken tiles that are out of 'line of sight' but within camera
+	
+Overworld
+	End Goal
+	-Interact with environment to change it
+	-Tool flags to show what can be interacted with when
+	-
+
+	BASIC
+	-wall tiles interactable once
+	-warp between maps
+
+	TIER 1
+	-wall, floor tiles interactable
+	-some tiles interactalbe once permanently, others reset after ____
+	-warp or walk between maps
+
+	TIER 2
+	-interactable entities (permanent or temp)(boulders, signs, 
+	-some things only interactable with tools (tool pickup sets flag)
+	-multiple movement permissions (think walk and swim with specific transition tiles, etc.
+
+
+Entities
+	BASIC
+	-player
+
+	TIER 1
+	-generic NPCs
+	-signs
+
+	TIER 2
+	-NPCs of different types
+	-items
+	-overworld roadblocks and such (boulders, cutable trees, ect.)
+
+
+Events
+	End result
+	-game can move any entity at variable speeds
+
+Text
+	Standard text comes from interacting with people, does not freeze player, if player moves far enough away text ends
+	Event texts freezes player, cannot be walked away from or ended prematurely
