@@ -42,7 +42,7 @@ class GameEntity(): #parent entity class
 
     def Draw(self):
         #no cam insert, do need?
-        self.surface.blit(self.sprite,(self.rect.centerx,self.rect.centery))
+        self.surface.blit(self.sprite,(self.rect.left,self.rect.top))
 
 
 class Player(GameEntity):

@@ -33,16 +33,17 @@ class World:
         return rects
 
     def draw(self, screen):
+
         for y in range(ylen):
             for x in range(xlen):
                 colour = (0,0,0)
                 if self.Tiles[x][y] == '0':
                     colour = (0,0,0)
                 elif self.Tiles[x][y] == '1':
-                    colour = (125,125,0)
+                    colour = (105,175,10)
 
                 sprite = pygame.Surface([tilelen, tilelen])
                 sprite.fill(colour)
-                (tilelen*x, tilelen*y, tilelen, tilelen)
+                # (tilelen*x, tilelen*y, tilelen, tilelen)
 
-                screen.blit(sprite, (x,y))
+                screen.blit(sprite, (x*tilelen,y*tilelen))
